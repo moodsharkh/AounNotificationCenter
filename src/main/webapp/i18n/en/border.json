@@ -1,0 +1,27 @@
+{
+    "civilDefanceApp": {
+        "border" : {
+            "home": {
+                "title": "الحدود الجغرافية",
+                "leaflet":"لوحة التحكم",
+                "newleaflet":"إضافة منطقة",
+                "createLabel": "Create a new Border",
+                "createOrEditLabel": "Create or edit a Border"
+            },
+            "created": "تم إضافة حد جغرافي جديد",
+            "updated": "تم تحديث الحد الجغرافي",
+            "deleted": "تم حذف الحد الجغرافي",
+            "delete": {
+                "question": "هل أنت متأكد من حذف الحد الجغرافي بعنوان : {{ desc }} ؟"
+            },
+            "detail": {
+                "title": "Border"
+            },
+            "desc": "Desc",
+            "insertionDate": "Insertion Date",
+            "insertedBy": "Inserted By",
+            "onetomany": "Onetomany",
+            "notionetomany": "Notionetomany"
+        }
+    }
+}

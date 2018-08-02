@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "languagesToMessages",
+            "otherEntityName": "messages",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "messageToLanguages"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "languageDesc",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171102075636",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "languages",
+    "pagination": "no"
+}

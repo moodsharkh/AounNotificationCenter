@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "manytoone",
+            "otherEntityName": "border",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "lon",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raduis",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170910102225",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "points",
+    "pagination": "no"
+}

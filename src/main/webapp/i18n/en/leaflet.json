@@ -1,0 +1,9 @@
+{
+    "civilDefanceApp": {
+        "leaflet" : {
+            "home": {
+                "title": "لوحة التحكم"
+            }
+        }
+    }
+}

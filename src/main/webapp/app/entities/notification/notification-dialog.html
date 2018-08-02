@@ -1,0 +1,177 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div  dir="rtl">
+        <h3 style="padding-right:60px;font-weight: bold; color: #474f58;"> إرسال تنبيه جديد</h3>
+        <span style="padding-right: 60px" class="col-sm-12" dir="rtl"> <img  class="manImg" src="content/images/indicator-inactive.svg"></span>
+        <!--<h4 class="modal-title" id="myNotificationLabel" style="padding-right: 5%; font-weight: bold; color: #285e68">إرسال تنبيه جديد</h4>-->
+    </div>
+    <br><br>
+    <div class="modal-body" style="width: 90%; margin: auto" dir="rtl">
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" style="margin-bottom: 40px" >
+            <label  for="field_notimanytoone">اختر منطقة</label>
+
+            <select class="form-control"  id="field_notimanytoone" name="notimanytoone" ng-model="vm.notification.notimanytoone" ng-options="border as border.desc for border in vm.borders track by border.id">
+                <option value="" disabled selected>اختر منطقة</option>
+                <option value=""></option>
+            </select>
+
+            <span  >
+            <p style=" color:red ; background-color: transparent;border-color: transparent;font-weight: bold;font-size: large" class="btn btn-primary" data-dismiss="modal" aria-hidden="true"
+               ng-show="reg.region"  >* </p>
+                   </span>
+        </div>
+        <div class="form-group" style="margin-bottom: 40px" ng-show="reg.first">
+            <label  for="field_notimanytoone3">اختر منطقة</label>
+           <div class="input-group">
+            <select  class="form-control"  id="field_notimanytoone2" name="notimanytoone2" ng-model="vm.notification2.notimanytoone" ng-options="border2 as border2.desc for border2 in vm.borders2 track by border2.id">
+                <option value="" disabled selected>اختر منطقة</option>
+                <option value=""></option>
+            </select>
+               <span class="input-group-btn">
+            <button type="button" style=" color:#285e68 ; background-color: transparent;border-color: transparent;font-weight: bold;font-size: large" class="btn btn-primary" data-dismiss="modal" aria-hidden="true"
+                    ng-click="regclear2()">X </button>
+                   </span>
+           </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 40px" ng-show="reg.second">
+            <label  for="field_notimanytoone2">اختر منطقة</label>
+            <div class="input-group">
+            <select class="form-control"  id="field_notimanytoone3" name="notimanytoone3" ng-model="vm.notification3.notimanytoone" ng-options="border3 as border3.desc for border3 in vm.borders3 track by border3.id">
+                <option value="" disabled selected>اختر منطقة</option>
+                <option value=""></option>
+            </select>
+                <span class="input-group-btn">
+                <button type="button" style=" color:#285e68 ; background-color: transparent;border-color: transparent;font-weight: bold;font-size: large" class="btn btn-primary" data-dismiss="modal" aria-hidden="true"
+                        ng-click="regclear3()">X </button>
+                </span>
+            </div>
+        </div>
+        <p style="color: #285e68; " ng-click="regCheck()" ng-show="reg.more">+ إضافة منطقة أخرى</p>
+        <br><br>
+        <div class="form-group"style="margin-bottom: 40px" >
+            <label  for="field_imanytoone">اختر درجة الأهمية</label>
+
+            <select class="form-control" id="field_imanytoone" name="imanytoone" ng-model="vm.notification.imanytoone" ng-options="importance as importance.desc for importance in vm.importances track by importance.id">
+                <option  value="" disabled selected>اختر الأهمية</option>
+                <option value=""></option>
+            </select>
+            <span >
+            <p style=" color:red ; background-color: transparent;border-color: transparent;font-weight: bold;font-size: large" class="btn btn-primary" data-dismiss="modal" aria-hidden="true"
+               ng-show="reg.priority" >* </p>
+                   </span>
+
+    </div>
+        <div class="form-group" style="margin-bottom: 80px">
+            <label class="control-label"  for="field_expiryDate">تاريخ انتهاء التنبيه</label>
+            <div class="input-group"style="direction: ltr">
+                <input id="field_expiryDate" type="text" class="form-control" name="expiryDate" datetime-picker="{{dateformat}}" datepicker-options="dateOptions" ng-model="vm.notification.expiryDate" is-open="vm.datePickerOpenStatus.expiryDate"
+                />
+                <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('expiryDate')" style="height: 50px;border-color: #f4f7fa;"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </div>
+        </div>
+        <!--<div class="form-group"style="margin-bottom: 80px">-->
+            <!--<label class="control-label"  for="field_sendingDate">وقت الإرسال</label>-->
+            <!--<div class="input-group">-->
+                <!--<input id="field_sendingDate" type="text" class="form-control" name="sendingDate" datetime-picker="{{dateformat}}" ng-model="vm.notification.sendingDate" is-open="vm.datePickerOpenStatus.sendingDate"-->
+                <!--/>-->
+                <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('sendingDate')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <hr style="border-color: #285e68;margin-bottom: 40px">
+        <div class="form-group"style="margin-bottom: 40px">
+            <label class="control-label"  for="field_title">الموضوع</label>
+            <input placeholder="ادخل الموضوع" type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.notification.title"
+                    />
+        </div>
+        <div class="form-group"style="margin-bottom: 40px">
+            <label class="control-label"  for="field_message">الرسالة</label>
+            <textarea placeholder="ادخل الرسالة هنا" type="text" class="form-control"  style="height: 130px;max-width: 890px" name="message" id="field_message"
+                    ng-model="vm.notification.message"
+                    />
+        </div>
+
+        <div ng-show="lan.message_En">
+        <hr style="border-color: #285e68;margin-bottom: 40px">
+        <div class="form-group"style="margin-bottom: 40px; direction: ltr; " >
+            <label class="control-label"  for="field_title">Title</label>
+            <input placeholder="Enter Title Here" type="text" class="form-control"  name="title" id="field_title_En"
+                   ng-model="vm.newmessage1.title"
+            />
+        </div>
+        <div class="form-group"style="margin-bottom: 40px; direction: ltr">
+            <label class="control-label"  for="field_message">Message</label>
+            <textarea placeholder="Enter Message Here" type="text" class="form-control"  style="height: 130px;max-width: 890px" name="message" id="field_message_En"
+                      ng-model="vm.newmessage1.message"
+            />
+        </div>
+        </div>
+
+
+        <div ng-show="lan.message_Ur">
+        <hr style="border-color: #285e68;margin-bottom: 40px;">
+        <div class="form-group"style="margin-bottom: 40px; ">
+            <label class="control-label"  for="field_title">عنوان</label>
+            <input placeholder="عنوان درج کریں" type="text" class="form-control" name="title" id="field_title_Ur"
+                   ng-model="vm.newmessage2.title"
+            />
+        </div>
+        <div class="form-group"style="margin-bottom: 40px; ">
+            <label class="control-label"  for="field_message">پیغام</label>
+            <textarea placeholder="یہاں پیغام درج کریں" type="text" class="form-control"  style="height: 130px;max-width: 890px" name="message" id="field_message_Ur"
+                      ng-model="vm.newmessage2.message"
+            />
+        </div>
+        </div>
+
+        <div class="form-group" ng-show="lan.Message_First">
+            <label  for="field_notificationToLanguages">اختر اللغة</label>
+            <select class="form-control" id="field_notificationToLanguages" name="notificationToLanguages" ng-model="vm.newmessage1.notificationToLanguages"  ng-change="FirstLan()" ng-options="languages as languages.languageDesc for languages in vm.languages track by languages.id">
+                <option value="" disabled selected>اختر لغة</option>
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group" ng-show="lan.Message_Second">
+            <label  for="field_notificationToLanguages_Ur">اختر اللغة</label>
+            <select class="form-control" id="field_notificationToLanguages_Ur" name="notificationToLanguages" ng-model="vm.newmessage1.notification2ToLanguages" ng-change="FirstLan()" ng-options="languages2 as languages2.languageDesc for languages2 in vm.languages2 track by languages2.id">
+                <option value="" disabled selected>اختر لغة</option>
+                <option value=""></option>
+            </select>
+        </div>
+        <p style="color: #285e68; " ng-click="LanguaguesCheck()" ng-show="lan.MoreLanguage">+ إضافة لغة أخرى</p>
+        <!--<div class="form-group"style="margin-bottom: 40px">-->
+            <!--<label class="control-label"  for="field_receivedBy">عدد المستلمين </label>-->
+            <!--<input type="number" class="form-control" name="receivedBy" id="field_receivedBy"-->
+                    <!--ng-model="vm.notification.receivedBy"-->
+                    <!--/>-->
+        <!--</div>-->
+
+
+    </div>
+
+    <div  dir="ltr">
+        <div class="col-lg-3" dir="rtl"  >
+            <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary" style="background-color:#285e68 ;border-color: #285e68;font-weight: bold; margin-right: 23%">
+                <span >إرسال</span>
+            </button>
+        <button style="font-weight: bold;border-color: transparent;color:#285e68 " type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span >إلغاء</span>
+        </button>
+
+        </div>
+        <br> <br><br>
+    </div>
+    <!--<pre ng-if="true">{{vm.notification | json}}</pre>-->
+    <!--<pre ng-if="true">{{vm.obj | json}}</pre>-->
+
+
+</form>
+
+

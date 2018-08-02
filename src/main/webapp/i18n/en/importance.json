@@ -1,0 +1,22 @@
+{
+    "civilDefanceApp": {
+        "importance" : {
+            "home": {
+                "title": "Importances",
+                "createLabel": "Create a new Importance",
+                "createOrEditLabel": "Create or edit a Importance"
+            },
+            "created": "A new Importance is created with identifier {{ param }}",
+            "updated": "A Importance is updated with identifier {{ param }}",
+            "deleted": "A Importance is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Importance {{ id }}?"
+            },
+            "detail": {
+                "title": "Importance"
+            },
+            "desc": "Desc",
+            "ionetomany": "Ionetomany"
+        }
+    }
+}

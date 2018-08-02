@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 669 557" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(2.08333,0,0,2.08333,-474.672,-766.667)">
+        <g id="Logo" transform="matrix(1,0,0,1,4.84274,-7)">
+            <g id="Awn">
+                <path d="M316,642L290,642L361,500L290,595L244.269,534.891L383,482L544,543L544,558.613L422,510L544,642L507.247,642L383,493L337,595L428,595L445,620L326,620L316,642ZM274,535.801L287,551L307,522L274,535.801Z" style="fill:rgb(55,102,122);"/>
+                <g transform="matrix(1,0,0,1,0,-85)">
+                    <path d="M290,727L223,727L223,628L290,727Z" style="fill:rgb(55,102,122);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,0,-85)">
+                    <path d="M544,660.631L544,698L484,636L544,660.631Z" style="fill:rgb(55,102,122);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,0,-85)">
+                    <path d="M415,660.631L362,660.5L383,612L415,660.631Z" style="fill:rgb(55,102,122);"/>
+                </g>
+            </g>
+            <g id="Kaaba-header" transform="matrix(1,0,0,1,0,-85)">
+                <path d="M544,607L544,523L383.5,460L223,523L223,607L383.5,545L544,607Z" style="fill:rgb(55,102,122);"/>
+            </g>
+        </g>
+    </g>
+</svg>

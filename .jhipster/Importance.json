@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "ionetomany",
+            "otherEntityName": "notification",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "imanytoone"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "desc",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170919132110",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "importance",
+    "pagination": "no"
+}

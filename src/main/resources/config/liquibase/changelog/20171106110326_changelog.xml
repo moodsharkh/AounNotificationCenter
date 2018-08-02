@@ -1,0 +1,41 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Administrator (generated)" id="1509966217011-1">
+        <createTable tableName="languages">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="languagesPK"/>
+            </column>
+            <column name="language_desc" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1509966217011-2">
+        <createTable tableName="messages">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="messagesPK"/>
+            </column>
+            <column name="message_content" type="VARCHAR(255)"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="message_to_languages_id" type="BIGINT"/>
+            <column name="message_to_notification_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1509966217011-3">
+        <addColumn tableName="border">
+            <column name="color_reset" type="boolean"/>
+        </addColumn>
+    </changeSet>
+   <!-- <changeSet author="Administrator (generated)" id="1509966217011-4">
+        <addColumn tableName="notification">
+            <column name="expiry_date" type="binary(255)"/>
+        </addColumn>
+
+    </changeSet>
+
+    -->
+    <changeSet author="Administrator (generated)" id="1509966217011-5">
+        <addForeignKeyConstraint baseColumnNames="message_to_notification_id" baseTableName="messages" constraintName="FK45eixwmhcjm8uhcs8l5dw1uoi" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="notification"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1509966217011-6">
+        <addForeignKeyConstraint baseColumnNames="message_to_languages_id" baseTableName="messages" constraintName="FK73mb493lm5nlkyh9i2bplwwt4" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="languages"/>
+    </changeSet>
+</databaseChangeLog>

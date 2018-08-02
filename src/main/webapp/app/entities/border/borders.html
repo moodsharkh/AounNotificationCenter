@@ -1,0 +1,45 @@
+
+    <h3  style="padding-right:18px;font-weight: bold; color: #474f58" dir="rtl">الحدود الجغرافية</h3>
+    <span style="padding-right: 18px" class="col-sm-12" dir="rtl"> <img  class="manImg" src="content/images/indicator-inactive.svg"></span>
+    <!--<jhi-alert></jhi-alert>-->
+    <div class="container-fluid" >
+        <div class="row">
+            <div dir="ltr" style="margin-right:auto" class="col-xs-4 left">
+                <button style="background-color:#285e68 ;border-color: #285e68" class="btn btn-primary" ui-sref="newleaflet-maps" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                       منطقة جديدة
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+
+    <div class="table-responsive" dir="rtl">
+        <div infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <div class="col-sm-12">
+            <div style="border-style:solid; border-radius: 8px;margin-bottom:10px; border-color: #f4f7fa; "class="10" ng-repeat="border in vm.borders track by border.id" >
+               <!-- <td><a ui-sref="border-detail({id:border.id})">{{border.id}}</a></td>-->
+
+                <tr >
+                <small dir="rtl" style="padding-right:20px ;color: #c5c5c5 "> تم الإنشاء {{border.insertionDate | date:'mediumDate'}}  بواسطة {{border.insertedBy}}</small>
+                    <div class="col-lg-2" dir="ltr" style="padding-top: 20px;margin-left: 20px">
+                        <span style="" type="submit" ui-sref="border.edit({id:border.id})"><img class="manImg" src="content/images/group-5.svg"></img></span>
+                        <span type="submit" ui-sref="leaflet-maps-dialog({id:border.id})"><img class="manImg" src="content/images/group-3.svg"></img></span>
+                        <span ui-sref="border.delete({id:border.id})" type="submit"> <img class="manImg" src="content/images/group-2.svg"></img></span>
+                    </div>
+                    <h5 style="padding-right:20px;font-weight: bold; color: #323c47 " >{{border.desc}}
+
+
+                    </h5>
+                </tr>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

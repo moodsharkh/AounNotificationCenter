@@ -1,0 +1,58 @@
+<nav class="navbar navbar-default" role="navigation" dir="rtl">
+    <div class="container">
+        <div class="navbar-header" dir="rtl">
+            <button type="button" class="navbar-toggle" ng-click="vm.toggleNavbar()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+        <br>
+        <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li ui-sref-active="active" ng-switch-when="true" style="padding-right: 268px">
+                    <a href="" ng-click="vm.logout()" id="logout" style="padding-top: inherit">
+
+
+                        <h3 style="border-style: solid;border-color:#285e68; color:#285e68;border-radius: 4px; padding-bottom: 6px ">       <span style="font-size:small; padding-right:10px; padding-left: 10px; ">تسجيل خروج</span> </h3>
+
+                    </a>
+                </li>
+
+                <li ui-sref-active="active" style="padding-left:30px" >
+                    <a  ui-sref="notification"  ng-click="vm.collapseNavbar()" >
+                        <i  id="nav-notification"></i>
+
+                        <h5 style="font-weight: 800"><span>   التنبيهات </span></h5>
+
+
+                    </a>
+                </li>
+                <li ui-sref-active="active" style="padding-left:30px">
+                    <a ui-sref="border"   ng-click="vm.collapseNavbar()">
+                       <i id="nav-border"></i>
+                        <h5  style="font-weight: 800"> الحدود الجغرافية</h5>
+                    </a>
+                </li>
+                <li ui-sref-active="active" style="padding-right:150px ;padding-left:30px">
+                    <a ui-sref="leaflet-maps"  ng-click="vm.collapseNavbar()">
+
+                         <i id="nav-map"> </i>
+                        <H5 style="font-weight: 800; margin-bottom: 1px">  لوحة التحكم</H5>
+
+                    </a>
+                </li>
+
+
+
+                <a class="navbar-brand logo" href="#/" ng-click="vm.collapseNavbar()" style="padding-left: 40px">
+                    <img class="logo-img" src="content/images/logo-jhipster.png" alt="logo style=" style="height: 80px"/>
+
+                </a>
+            </ul>
+        </div>
+    </div>
+</nav>

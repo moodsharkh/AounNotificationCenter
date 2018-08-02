@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="civilDefanceApp.points.home.title">Points</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="points.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="civilDefanceApp.points.home.createLabel">
+                        Create new Points
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="civilDefanceApp.points.lon">Lon</span></th>
+                    <th><span data-translate="civilDefanceApp.points.lat">Lat</span></th>
+                    <th><span data-translate="civilDefanceApp.points.raduis">Raduis</span></th>
+                    <th><span data-translate="civilDefanceApp.points.manytoone">Manytoone</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="points in vm.points track by points.id">
+                    <td><a ui-sref="points-detail({id:points.id})">{{points.id}}</a></td>
+                    <td>{{points.lon}}</td>
+                    <td>{{points.lat}}</td>
+                    <td>{{points.raduis}}</td>
+                    <td>
+                        <a ui-sref="border-detail({id:points.manytoone.id})">{{points.manytoone.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="points-detail({id:points.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="points.edit({id:points.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="points.delete({id:points.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

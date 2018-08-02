@@ -1,0 +1,37 @@
+
+<div dir="rtl">
+    <h2><span >عرض تنبيه </span> {{vm.notification.title}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl  dir="rtl">
+        <dt><span >اسم المنطقة</span></dt>
+        <dd>
+            <a >{{vm.notification.notimanytoone.desc}}</a>
+        </dd>
+        <dt><span >درجة الأهمية</span></dt>
+        <dd>
+            <a >{{vm.notification.imanytoone.desc}}</a>
+        </dd>
+    </dl>
+        <dt><span data-translate="civilDefanceApp.notification.message">Message</span></dt>
+        <dd>
+            <span>{{vm.notification.message}}</span>
+        </dd>
+        <dt><span data-translate="civilDefanceApp.notification.receivedBy">Received By</span></dt>
+        <dd>
+            <span>{{vm.notification.receivedBy}}</span>
+        </dd>
+        <dt><span data-translate="civilDefanceApp.notification.sendingDate">Sending Date</span></dt>
+        <dd>
+            <span>{{vm.notification.sendingDate | date:'medium'}}</span>
+        </dd>
+
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+
+</div>

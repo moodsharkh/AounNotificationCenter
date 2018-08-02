@@ -1,0 +1,28 @@
+<form name="deleteForm" ng-submit="vm.confirmDelete(vm.border.id)" dir="rtl" style="">
+    <div >
+        <button type="button" style="padding-right: 5px" class="close" data-dismiss="modal" aria-hidden="true"
+                                                               ng-click="vm.clear()">&times;</button>
+        <br>
+        <br><br>
+        <h4 class="modal-title" style="padding-right: 60px; font-weight: bold; color: #285e68" >تأكيد حذف الحد الجغرافي</h4>
+    </div>
+    <div class="modal-body" style="padding-right: 60px">
+        <!--<jhi-alert-error></jhi-alert-error>-->
+        <p style="font-weight: bold;" data-translate="civilDefanceApp.border.delete.question" translate-values="{desc: '{{vm.border.desc}}'}">Are you sure you want to delete this Border?</p>
+    </div>
+
+    <div dir="ltr">
+    <div class="col-sm-6" dir="ltr">
+
+        <button type="button" class="btn btn-default" style="border-color: transparent;font-weight: bold;color:#285e68 " data-dismiss="modal" ng-click="vm.clear() ">
+            <span >  الغاء </span>
+        </button>
+        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger" style="font-weight:bold;background-color: #285e68;border-color: #285e68;">
+            <span>  حذف  </span>
+        </button>
+
+    </div>
+        <br>
+        <br><br>
+    </div>
+</form>

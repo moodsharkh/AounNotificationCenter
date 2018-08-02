@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "notimanytoone",
+            "otherEntityName": "border",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "desc"
+        },
+        {
+            "relationshipName": "imanytoone",
+            "otherEntityName": "importance",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "desc"
+        },
+        {
+            "relationshipName": "notificationToMessages",
+            "otherEntityName": "messages",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "messageToNotification"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "message",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "receivedBy",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sendingDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "expiryDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170919102700",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "notification",
+    "pagination": "no"
+}

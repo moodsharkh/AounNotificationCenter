@@ -1,0 +1,71 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" dir="rtl">
+
+    <div >
+        <button style="padding-right: 5px" type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4  class="modal-title" id="myBorderLabel" style="padding-right: 40px;padding-top: 10px; font-weight: bold; color: #285e68"  >تعديل منطقة</h4>
+    </div>
+    <br>
+    <div style="padding-right: 40px">
+        <jhi-alert-error></jhi-alert-error>
+        <!--<div class="form-group" ng-show="vm.border.id">-->
+            <!--<label for="id" data-translate="global.field.id">ID</label>-->
+            <!--<input type="text" class="form-control" id="id" name="id"-->
+                    <!--ng-model="vm.border.id" readonly />-->
+        <!--</div>-->
+        <div class="form-group">
+            <label class="control-label"  for="field_desc">اسم المنطقة</label>
+            <input type="text" class="form-control" style="width: 95%" name="desc" id="field_desc"
+                    ng-model="vm.border.desc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_insertionDate">تاريخ الإدخال : </label>
+
+                    <input id="field_insertionDate" type="text" class="control-label" style="border-color: transparent" name="insertionDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.border.insertionDate" readonly/>
+                           <!--is-open="vm.datePickerOpenStatus.insertionDate"-->
+
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('insertionDate')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+
+        </input>
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="field_insertedBy">أدخلت بواسطة : </label>
+            <input type="text" class="control-label" style="border-color: transparent" name="insertedBy" id="field_insertedBy"
+                    ng-model="vm.border.insertedBy" readonly
+                    />
+            <button style="margin-right: 53%" type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+                <span >  الغاء </span>
+            </button>
+            <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary" style="background-color: #285e68;border-color: #285e68;">
+                <span >حفظ</span>
+            </button>
+        </div>
+
+    </div>
+    <!--<div dir="ltr">-->
+        <!--<div class="col-sm-6" dir="ltr">-->
+
+
+
+        <!--</div>-->
+        <!--<br>-->
+        <!--<br><br>-->
+    <!--</div>-->
+    <!--<div >-->
+        <leaflet lf-center="center" layers="layers" controls="controls" width="100%" height="480px"></leaflet>
+    </div>
+    <!--<div class="modal-footer">-->
+        <!--<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">-->
+            <!--<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>-->
+        <!--</button>-->
+        <!--<button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">-->
+            <!--<span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>-->
+        <!--</button>-->
+    <!--</div>-->
+
+
+</form>

@@ -1,0 +1,26 @@
+{
+    "civilDefanceApp": {
+        "notification" : {
+            "home": {
+                "title": "التنبيهات",
+                "createLabel": "Create a new Notification",
+                "createOrEditLabel": "Create or edit a Notification"
+            },
+            "created": "A new Notification is created with identifier {{ param }}",
+            "updated": "A Notification is updated with identifier {{ param }}",
+            "deleted": "A Notification is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "هل أنت متأكد من حذف التنبيه بعنوان {{ id }}؟"
+            },
+            "detail": {
+                "title": "تنبيه جديد"
+            },
+            "title": "Title",
+            "message": "Message",
+            "receivedBy": "Received By",
+            "sendingDate": "Sending Date",
+            "notimanytoone": "Notimanytoone",
+            "imanytoone": "Imanytoone"
+        }
+    }
+}

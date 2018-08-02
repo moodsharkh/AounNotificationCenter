@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "onetomany",
+            "otherEntityName": "points",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "manytoone"
+        },
+        {
+            "relationshipName": "notionetomany",
+            "otherEntityName": "notification",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "notimanytoone"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "desc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insertionDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "insertedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "colorReset",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170910102044",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "border",
+    "pagination": "no"
+}

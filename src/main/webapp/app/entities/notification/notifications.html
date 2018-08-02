@@ -1,0 +1,39 @@
+<div dir="rtl">
+    <h3 style="padding-right:18px;font-weight: bold; color: #474f58;"> التنبيهات</h3>
+    <span style="padding-right: 18px" class="col-sm-12" dir="rtl"> <img  class="manImg" src="content/images/indicator-inactive.svg"></span>
+    <!--<jhi-alert></jhi-alert>-->
+    <div class="container-fluid" >
+        <div class="row">
+            <div dir="ltr" style="margin-right:auto" class="col-xs-4 left">
+                <button style="background-color:#285e68 ;border-color: #285e68" class="btn btn-primary" ui-sref="notification.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                       تنبيه جديد
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" dir="rtl">
+        <div infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <div class="col-sm-12">
+                <div style="border-style:solid; border-radius: 8px;margin-bottom:10px;border-color: #f4f7fa" ng-repeat="notification in vm.notifications track by notification.id">
+                    <!--<td><a ui-sref="notification-detail({id:notification.id})">{{notification.id}}</a></td>-->
+                    <small dir="rtl" style="padding-right:20px ;color: #c5c5c5">تم الإنشاء {{notification.notimanytoone.insertionDate | date:'mediumDate'}}  بواسطة {{notification.notimanytoone.insertedBy}} </small>
+                    <div class="col-lg-3" dir="ltr" style="padding-top: 20px; margin-left: 20px">
+                        <span style="" type="submit" ui-sref="leaflet-maps-dialogn({id:notification.notimanytoone.id})"><img class="manImg" src="content/images/group-3.svg"></img></span>
+                        <!--<span type="submit" ui-sref="notification.edit({id:notification.id})"><img class="manImg" src="content/images/group-5.svg"></img></span>-->
+                        <span ui-sref="notification.delete({id:notification.id})" type="submit"> <img class="manImg" src="content/images/group-2.svg"></img></span>
+                    </div>
+                    <h5 style="padding-right:20px; font-weight: bold; color: #323c47 " > {{notification.notimanytoone.desc}}   </h5>
+                    <small style="padding-right:20px;color: #285e68 "> عدد المستلمين {{notification.receivedBy}}</small>
+                    <h5 dir="rtl" style="padding-right:20px ;color: #abaaaa">عنوان  <small dir="rtl" style=" ;color: #c5c5c7"> {{notification.title}}</small>  </h5>
+                    <small dir="rtl" style="padding-right:20px ;color: #abaaaa"> الرسالة <small dir="rtl" style=" ;color: #c5c5c7"> {{notification.message}}</small> </small>
+
+
+</div>
+                </div>
+        </div>
+    </div>
+</div>

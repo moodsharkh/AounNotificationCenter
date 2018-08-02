@@ -1,0 +1,24 @@
+{
+    "civilDefanceApp": {
+        "messages" : {
+            "home": {
+                "title": "Messages",
+                "createLabel": "Create a new Messages",
+                "createOrEditLabel": "Create or edit a Messages"
+            },
+            "created": "A new Messages is created with identifier {{ param }}",
+            "updated": "A Messages is updated with identifier {{ param }}",
+            "deleted": "A Messages is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Messages {{ id }}?"
+            },
+            "detail": {
+                "title": "Messages"
+            },
+            "title": "Title",
+            "messageContent": "Message Content",
+            "messageToLanguages": "Message To Languages",
+            "messageToNotification": "Message To Notification"
+        }
+    }
+}
